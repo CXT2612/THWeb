@@ -3,7 +3,7 @@
 - View content thêm cột tên Option [edit/delete]
 - View content list chỉ xuất hiện content của mình
 - Size là số lượng kí tự.
-- Login xong chuyển trên View content
+- Login xong chuyển đến View content
 - Có xác thực và phân quyền:
 Login để xác thực
 Chỉ có admin mới có quyền edit và delete tất cả conten, còn member thì chỉ có quyền edit và delete content của chính mình thôi phải không thầy
