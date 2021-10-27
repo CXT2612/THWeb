@@ -1,24 +1,31 @@
-		
-		body{
+		h1
+		{
+			margin-left:3%;
+			font-weight: 400;
+		}
+		body
+		{
 			margin: 0;
 			padding: 0;
-			background: #E5E5E5;
+			background: white;
 			height: 100vh;
 			overflow: hidden;
 			font-family: 'Arial', sans-serif;
 		}
-		.center{
-			width: 350px;
-			margin: 120px auto;
+		.center
+		{
+			width: 94%;
+			margin: 10px auto;
 			position: relative;
 		}
-		.center .header{
-			font-size: 15px;
-			font-weight: 100;
+		.center .header
+		{
+			font-size: 13px;
+			font-weight: 50;
 			color: black;
 			padding: 10px 0 10px 15px;
-			background: #dddddd;
-			border: 2px solid #D3D3D3;
+			background: #E5E5E5;
+			border: 1px solid #D3D3D3;
 			border-radius: 5px 5px 0px 0px;
 		}
 		.center form
@@ -28,58 +35,49 @@
 			width: 100%;
 			padding: 10px 0 10px 15px;
 			box-sizing: border-box;
-			border: 2px solid #D3D3D3;
+			border: 1px solid #D3D3D3;
 			border-radius: 0px 0px 5px 5px;
 		}
 		form input
 		{
-			height: 38px;
-			width: 90%;
-			padding: 0 10px;
+			height: 30px;
+			width: 75%;
+			padding: 0px 10px;			
 			border-radius: 3px;
 			border: 1px solid #D3D3D3;
-			font-size: 15px;
-			
-		}
-		form input[type="password"]
-		{
-			margin-top: 15px;
-		}	
+			font-size: 13px;
+			margin-bottom: 15px;
+			margin-top: 10px;
+		}			
 		form input[type="text"]
 		{
 			margin-bottom: 15px;
+			margin-top: 10px;			
 		}		
 		form input[type="submit"]
 		{
-			margin-top: 15px;
-			margin-bottom: 15px;
-			width: 95%;
-			height: 40px;
-			color: white;
-			line-height: 38px;
-			border-radius: 5px;		
-			background: #37a500;
-			font-size: 18px;
-		}	
-		form input[type="checkbox"]
-		{
-			margin-top: 13px;
+			margin-top: 5px;
 			margin-bottom: 5px;
-			width: 4%;
-			height: 11px;			
-			position: static;
-			background: #dddddd;
-		}	
+			width: 10%;
+			height: 30px;
+			color: #4C4C4C;
+			line-height: 30px;
+			border-radius: 5px;		
+			background: white;
+			font-size: 13px;
+			padding: 0px 0px;
+		}				
 		label
 		{
 			text-decoration: none;
 			font-size: 13px;
-			font-weight: 100;
+			font-weight: 600;
 			color: black;
 			padding: 0px 0px 0px 0px;
 			
 		}	
-		form a{
+		form a
+		{
 			text-decoration: none;
 			font-size: 13px;
 			color: #1E90FF;
