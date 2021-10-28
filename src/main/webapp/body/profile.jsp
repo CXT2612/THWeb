@@ -10,7 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-	<h1>	Edit Profile</h1>
+	<h1>Edit Profile</h1>
 	<div class="center">
 		<div class="header">Profile Form Elements</div>		
 		<form id="profile-form" method="post">		
@@ -19,10 +19,11 @@
 			<label>Last Name</label><br/>	
 			<input id ="lname" type="text" placeholder="Enter the last name"><br/>
 			<label>Email</label><br/>
+			<br/>
 			<label>Phone</label><br/>
 			<input id ="phone" type="text" placeholder="Enter your phone number"><br/>
 			<label>Descriptions</label><br/>
-			
+			<textarea id="des"></textarea><br/>
 			<input id="submit" type="submit" value="Submit Button">
 			<input id="reset" type="submit" value="Reset Button">
 						
