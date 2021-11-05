@@ -13,7 +13,11 @@
 <body>
 	<div class="center">
 		<div class="header">Please Sign In</div>		
+<<<<<<< HEAD
 		<form id="login-form" method="post" action="<%=request.getContextPath()%>/login" method="post">			
+=======
+		<form id="login-form" method="post">			
+>>>>>>> ae8a964fb53d132970acbe4fd7d88dafdb3e4727
 			<input id ="email" type="email" placeholder="E-mail">			
 			<input id="pass" type="password" placeholder="Password">				
 			<input type="checkbox" class="check" name="remember">

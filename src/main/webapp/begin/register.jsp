@@ -12,7 +12,11 @@
 <body>
 	<div class="center">
 		<div class="header">Register</div>
+<<<<<<< HEAD
 		<form id="register-form" method ="post"action="<%=request.getContextPath()%>/register" >
+=======
+		<form id="register-form" method ="post">
+>>>>>>> ae8a964fb53d132970acbe4fd7d88dafdb3e4727
 			<input id ="name" type="text" placeholder="User name">			
 			<input id ="email" type="email" placeholder="E-mail">			
 			<input id="pass" type="password" placeholder="Password">	
