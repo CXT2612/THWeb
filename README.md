@@ -16,5 +16,5 @@ Chỉ có admin mới có quyền edit và delete tất cả conten, còn member
 - Chức năng Search tất cả thông tin
 - ID tăng tự động, lúc xóa không cần sắp xếp lại, không sử dụng lại ko ạ
 - Khi bấm Edit thì sử dụng lại trang Form content
-- Register xong quay về trang Login
-- Thay đổi trên task thì báo để thầy thay đổi(hỏi nhóm trước khi thay đổi nha)
+- Register xong thông báo thành công rồi quay về trang Login
+- Thay đổi trên task thì báo để thầy thay đổi (hỏi nhóm trước khi thay đổi nha)
