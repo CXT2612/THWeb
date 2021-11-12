@@ -21,14 +21,11 @@
       <artifactId>servlet-api</artifactId>
       <version>2.3</version>
     </dependency>
-<<<<<<< HEAD
     <dependency>
     <groupId>org.apache.taglibs</groupId>
     <artifactId>taglibs-standard-spec</artifactId>
     <version>1.2.5</version>
 </dependency>
-=======
->>>>>>> 388536d6c35f50c465fae03d50075404b6539f35
   </dependencies>
   <build>
     <plugins>

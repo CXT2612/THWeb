@@ -41,13 +41,8 @@ public class LoginServlet extends HttpServlet {
                 response.sendRedirect("view.jsp");
             } else {
                 HttpSession session = request.getSession();
-<<<<<<< HEAD
                 session.setAttribute("email",email);
                 response.sendRedirect("login.jsp");
-=======
-                //session.setAttribute("user", username);
-                //response.sendRedirect("login.jsp");
->>>>>>> 388536d6c35f50c465fae03d50075404b6539f35
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
