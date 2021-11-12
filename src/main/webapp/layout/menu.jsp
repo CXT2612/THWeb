@@ -7,7 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+<<<<<<< HEAD
 <div style="background-color: rgb(236, 233, 233); border: solid 1px rgb(212, 209, 209);">
+=======
+<div style="width: 20%; background-color: rgb(236, 233, 233); border: solid 1px rgb(212, 209, 209);">
+>>>>>>> 0c7b4a4a39e63fb082fc2a3c6cd1c62ad27df47e
       <div style="display: flex; margin: 15px 15px 15px 15px;">
         <input style="width: 80%" height="20px;" placeholder="Search..."/>
         <div style="display: flex; width: 20%; height: 20px; border: solid 1px; justify-content: center; align-items: center;">

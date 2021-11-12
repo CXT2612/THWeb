@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<<<<<<< HEAD
 <title>main</title>
 <style type="text/css">
 		header
@@ -127,6 +128,17 @@
 		<h1>Edit Profile</h1>
 	<div class="center">
 		<div class="bheader">Profile Form Elements</div>		
+=======
+<title>User Profile</title>
+<link rel="stylesheet" type="text/css" href="style-profile.css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<h1>Edit Profile</h1>
+	<div class="center">
+		<div class="header">Profile Form Elements</div>		
+>>>>>>> 0c7b4a4a39e63fb082fc2a3c6cd1c62ad27df47e
 		<form id="profile-form" method="post">		
 			<label>First Name</label><br/>
 			<input id ="fname" type="text" placeholder="Enter the first name"><br/>
@@ -143,8 +155,11 @@
 						
 		</form>		
 	</div>
+<<<<<<< HEAD
 	</section>
 </div>
+=======
+>>>>>>> 0c7b4a4a39e63fb082fc2a3c6cd1c62ad27df47e
 	<script>
             // Mong  muốn của chúng ta
            Validator

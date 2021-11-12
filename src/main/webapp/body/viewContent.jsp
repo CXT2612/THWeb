@@ -6,6 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>View Content</title>
 <link rel="stylesheet" href="style-view.css">
+<<<<<<< HEAD
 <style type="text/css">
 header
 {
@@ -35,11 +36,21 @@ aside
 		<%@include file="../layout/menu.jsp"%>
 	</aside>
 	<section>
+=======
+</head>
+<body>
+<h2>View Content</h2>
+<hr/>
+>>>>>>> 0c7b4a4a39e63fb082fc2a3c6cd1c62ad27df47e
 <div class="all">
   <div class="top">
       <span class="top-text">View Content List</span>
     <hr/>
   </div>
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 0c7b4a4a39e63fb082fc2a3c6cd1c62ad27df47e
   <table width="1000px">
     <tr>
        <th>#</th>
@@ -58,8 +69,11 @@ aside
           </td>           
        </tr>   
   </table>
+<<<<<<< HEAD
   </div>
   </section>
+=======
+>>>>>>> 0c7b4a4a39e63fb082fc2a3c6cd1c62ad27df47e
 </div>
 </body>
 </html>
