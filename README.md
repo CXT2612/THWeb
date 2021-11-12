@@ -1,4 +1,4 @@
-# Web project (test git)
+# Web project
 *Đồ án:
 - View content thêm cột tên Option [edit/delete]
 - View content list chỉ xuất hiện content của mình
