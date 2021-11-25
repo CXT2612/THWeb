@@ -18,3 +18,4 @@ Chỉ có admin mới có quyền edit và delete tất cả conten, còn member
 - Khi bấm Edit thì sử dụng lại trang Form content
 - Register xong thông báo thành công rồi quay về trang Login
 - Thay đổi trên task thì báo để thầy thay đổi (hỏi nhóm trước khi thay đổi nha)
+- Giữ lại nội dung của phần Search sau khi search
