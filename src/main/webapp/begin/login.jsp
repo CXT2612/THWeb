@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="ISO-8859-1"%>  
-
+<%@ page import="member.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,13 +13,19 @@
 <body>
 	<div class="center">
 		<div class="header">Please Sign In</div>		
-		<form id="login-form" method="post" action="<%=request.getContextPath()%>/login" method="post">			
-			<input id ="email" type="email" placeholder="E-mail">			
-			<input id="pass" type="password" placeholder="Password">				
-			<input type="checkbox" class="check" name="remember">
+		<form id="login-form" method="post" action="login">			
+			<input id ="email" maxlength="30" type="email" placeholder="E-mail" required value="${param.email}">			
+			<input id="pass" maxlength="50" type="password" placeholder="Password" required value="${param.pass}">				
+			<input id="checkbox" type="checkbox" class="check" name="remember">
+			<% String err = (String) request.getAttribute("error");
+                if (err != null) {%>
+            <div>
+                <p style="color:red;"><span style="margin-left:21px;"><%out.print(err); %></span></p>
+            </div> 
+            <% }%>
 			<label>Remember me</label>			
 			<input id="login" type="submit" value="Login">
-			<a href="/Web/begin/register.jsp">Click here to Register</a>			
+			<a href="/Web/begin/register.jsp">Click here to Register</a>				
 		</form>		
 	</div>
 	<script>
