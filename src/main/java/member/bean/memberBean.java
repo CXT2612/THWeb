@@ -1,4 +1,6 @@
-package member;
+package member.bean;
+import member.controller.*;
+import member.dao.*;
 
 import java.io.Serializable;
 

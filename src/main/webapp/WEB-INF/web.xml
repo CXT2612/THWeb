@@ -6,33 +6,4 @@
 	<welcome-file-list>
 		<welcome-file>login.jsp</welcome-file>
 	</welcome-file-list>
-	<servlet>
-		<display-name>Login</display-name>
-		<servlet-name>Login</servlet-name>
-		<servlet-class>member.LoginServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>Login</servlet-name>
-		<url-pattern>/login</url-pattern>
-	</servlet-mapping>
-	<servlet>
-		<display-name>Register</display-name>
-		<servlet-name>Register</servlet-name>
-		<servlet-class>member.RegisterServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>RegisterServlet</servlet-name>
-		<url-pattern>/register</url-pattern>
-	</servlet-mapping>
-	<servlet>
-		<description></description>
-		<display-name>Profile</display-name>
-		<servlet-name>Profile</servlet-name>
-		<servlet-class>member.ProfileServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>Profile</servlet-name>
-		<url-pattern>/editprofile</url-pattern>
-	</servlet-mapping>
-
 </web-app>

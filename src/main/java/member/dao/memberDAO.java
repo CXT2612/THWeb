@@ -1,4 +1,6 @@
-package member;
+package member.dao;
+import member.bean.*;
+import member.controller.*;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -79,12 +81,13 @@ public class memberDAO {
 		return result;
 	}
 
-	public String getUsername() throws SQLException {
+	public String getUsername( memberBean u ) throws SQLException {
 		String user = "";
 		Connection connection = getConnection();
 		try {
+			if(u.getUsername() == null) return user;
 			PreparedStatement preparedStatement = connection.prepareStatement("select * from Member where Id=?");
-			preparedStatement.setInt(1, newUser.getId());
+			preparedStatement.setInt(1, u.getId());
 			ResultSet rs = preparedStatement.executeQuery();
 			if (rs.next()) {
 				user = rs.getString("Username");

@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="ISO-8859-1"%>
-<%@ page import="member.ProfileServlet"%>
-<%@ page import="member.memberBean"%>
-<%@ page import="member.memberDAO"%>
+	pageEncoding="UTF-8"%>
+<%@ page import="member.dao.*"%>
+<%@ page import="member.bean.*"%>
+<%@ page import="member.controller.ProfileServlet"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -133,57 +134,51 @@ h5 {
 			<h1>Edit Profile</h1>
 			<div class="center">
 				<div class="bheader">Profile Form Elements</div>
-				<form id="profile-form" method="post" action="profile">
-					<jsp:useBean id="userinfo" class="member.memberDAO"></jsp:useBean>
-					<label>First Name</label><br /> 
-					<input id="fname" type="text"
-						placeholder="Enter the first name"
-						value='<jsp:getProperty property="fname" name="userinfo"/>'
-						required><br /> 
-					<label>Last Name</label><br /> 
-					<input id="lname" type="text" placeholder="Enter the last name"
-						value='<jsp:getProperty property="lname" name="userinfo"/>'
-						required><br /> 
-					<label>Email</label><br />
-					<h5><jsp:getProperty property="email" name="userinfo" /></h5>
-					<label>Phone</label><br /> <input id="phone" type="text"
-						placeholder="Enter your phone number" value="" required><br />
-					<label>Descriptions</label><br />
-					<textarea id="des"
-						value='<jsp:getProperty property="des" name="userinfo"/>'></textarea>
-					<br /> <input id="submit" type="submit" value="Submit Button"
-						onclick=""> <input id="reset" type="submit"
-						value="Reset Button" onclick="reset()">
+				<form id="profile-form" method="post"
+					action="<%=request.getContextPath()%>/profile">
+					<jsp:useBean id="userinfo" class="member.bean.memberBean" scope= "application" >
+						<label>First Name</label>
+						<br />
+						<input id="fname" type="text" placeholder="Enter the first name"
+							value='<jsp:getProperty property="fname" name="userinfo"/>'
+							required>
+						<br />
+						<label>Last Name</label>
+						<br />
+						<input id="lname" type="text" placeholder="Enter the last name"
+							value='<jsp:getProperty property="lname" name="userinfo"/>'
+							required>
+						<br />
+						<label>Email</label>
+						<br />
+						<h5>
+							<%
+							String e = (String) request.getAttribute("email");
+							out.print(e);
+							%>
+						</h5>
+						<label>Phone</label>
+						<br />
+						<input id="phone" type="text"
+							placeholder="Enter your phone number" value="" required>
+						<br />
+						<label>Descriptions</label>
+						<br />
+						<textarea id="des"><jsp:getProperty property="des"
+							name="userinfo" /></textarea>
+						<br />
+						<input id="submit" type="submit" value="Submit Button" onclick="">
+						<input id="reset" type="submit" value="Reset Button"
+							onclick="reset()">
+					</jsp:useBean>
 				</form>
 			</div>
 		</section>
 	</div>
 	<script>
-		// Mong  muốn của chúng ta
-		Validator({
-			form : '#profile-form',
-			errorSelector : [ '.form-message', '.warning-message' ],
-			rules : [
-					Validator.minLength('#fname', 3),
-					Validator.minLength('#lname', 3),
-					Validator.minLength('#phone', 9),
-					Validator.maxLength('#fname', 30),
-					Validator.maxLength('#lname', 30),
-					Validator.maxLength('#phone', 13),
-					Validator.isRequired('#fname', 'Vui lòng nhập họ của bạn!'),
-					Validator
-							.isRequired('#lname', 'Vui lòng nhập tên của bạn!'),
-					Validator
-							.isRequired('#phone', 'Vui lòng nhập SĐT của bạn!'),
-					Validator.isRequired('#des',
-							'Vui lòng nhập mô tả dưới 200 ký tự!'), ],
-		// onSubmit:function(data){ console.log(data); }
-		});
+		function reset() {
+			location.reload();
+		}
 	</script>
-	<script>
-        function reset(){
-            location.reload();
-        }
-    </script>
 </body>
 </html>

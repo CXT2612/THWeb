@@ -1,7 +1,9 @@
-package member;
-
+package member.controller;
+import member.bean.*;
+import member.dao.*;
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,7 +15,7 @@ import javax.servlet.http.HttpSession;
  * @email Ramesh Fadatare
  */
 
-@WebServlet("/register")
+@WebServlet(urlPatterns = "/Web/begin/register")
 public class RegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1;
 	public memberDAO registerDao;
@@ -21,7 +23,7 @@ public class RegisterServlet extends HttpServlet {
 		registerDao = new memberDAO();
 	}
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		String username = request.getParameter("name");
@@ -43,17 +45,23 @@ public class RegisterServlet extends HttpServlet {
 				session.setAttribute("email", email);
 				session.setAttribute("password", password);
 				response.sendRedirect("login.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+				rd.forward(request, response);
 			} else {
 				request.setAttribute("error", "Password and RePassword must same.");
 			}
 			break;
 		case 0:
 			if (registerDao.checkemail(email) == 0) {
-				request.setAttribute("error", "Email must between 5 and 50 characters.");
+				request.setAttribute("error", "Email must be between 5 and 50 characters.");
 			} else if (registerDao.checkpass(password) == 0)
-				request.setAttribute("error", "Password must between 8 and 30 characters.");
+				request.setAttribute("error", "Password must be between 8 and 30 characters.");
 			else
-				request.setAttribute("error", "Username must between 3 and 30 characters.");
+				request.setAttribute("error", "Username must be between 3 and 30 characters.");
 		}
+	}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		this.doGet(request, response);
 	}
 }

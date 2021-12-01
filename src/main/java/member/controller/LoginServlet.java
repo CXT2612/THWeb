@@ -1,7 +1,8 @@
-package member;
+package member.controller;
+import member.bean.*;
+import member.dao.*;
 
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,7 +14,7 @@ import javax.servlet.RequestDispatcher;
 /**
  * @email Ramesh Fadatare
  */
-@WebServlet("/login")
+@WebServlet(urlPatterns = "/Web/begin/login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1;
 	public memberDAO loginDao;
@@ -37,8 +38,11 @@ public class LoginServlet extends HttpServlet {
 				if (loginDao.loginUser(Email, Password)) {
 					memberBean u = loginDao.getUser();
 					if (u != null) {
+						
 						session.setAttribute("user", u);
 						response.sendRedirect("editprofile.jsp");
+						RequestDispatcher rd = request.getRequestDispatcher("editprofile.jsp");
+						rd.forward(request, response);
 					}
 				} else {
 					request.setAttribute("error", "Unknown user. Please try again.");
@@ -51,9 +55,9 @@ public class LoginServlet extends HttpServlet {
 			break;
 		case 0:
 			if (loginDao.checkemail(Email) == 0) {
-				request.setAttribute("error", "Email must between 5 and 50 characters.");
+				request.setAttribute("error", "Email must be between 5 and 50 characters.");
 			} else
-				request.setAttribute("error", "Password must between 8 and 30 characters.");
+				request.setAttribute("error", "Password must be between 8 and 30 characters.");
 		}
 	}
 }

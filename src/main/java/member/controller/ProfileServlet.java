@@ -1,4 +1,6 @@
-package member;
+package member.controller;
+import member.bean.*;
+import member.dao.*;
 
 import java.io.IOException;
 
@@ -14,7 +16,7 @@ import javax.servlet.http.HttpSession;
  * @email Ramesh Fadatare
  */
 
-@WebServlet("/profile")
+@WebServlet(urlPatterns = "/Web/body/profile")
 public class ProfileServlet extends HttpServlet {
 	private static final long serialVersionUID = 1;
 	public memberDAO profileDao;
@@ -22,7 +24,7 @@ public class ProfileServlet extends HttpServlet {
 		profileDao = new memberDAO();
 	}
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		String fname = request.getParameter("fname");
@@ -41,6 +43,7 @@ public class ProfileServlet extends HttpServlet {
 					memberBean u = profileDao.getUser();
 					if (u != null) {
 						session.setAttribute("user", u);
+						session.setAttribute("email", u.getEmail());
 						request.setAttribute("update", "Update profile successfully");
 					}
 				} else {
@@ -56,12 +59,15 @@ public class ProfileServlet extends HttpServlet {
 			break;
 		case 0:
 			if (profileDao.checkfname(fname) == 0) {
-				request.setAttribute("error", "FirstName must between 3 and 30 characters.");
+				request.setAttribute("error", "FirstName must be between 3 and 30 characters.");
 			} else if (profileDao.checklname(lname) == 0)
-				request.setAttribute("error", "Lastname must between 3 and 30 characters.");
+				request.setAttribute("error", "Lastname must be between 3 and 30 characters.");
 			else
-				request.setAttribute("error", "Phone must between 9 and 13 characters.");
+				request.setAttribute("error", "Phone must be between 9 and 13 characters.");
 		}
 	}
-
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		this.doGet(request, response);
+	}
 }

@@ -2,7 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="member.dao.*"%>
 <%@ page import="member.bean.*"%>
-<%@ page import="member.controller.RegisterServlet"%>
+<%@ page import="member.controller.LoginServlet"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,16 +15,17 @@
 </head>
 <body>
 	<div class="center">
-		<div class="header">Register</div>
-		<form id="register-form" method="post" action="<%= request.getContextPath() %>/register">
-			<input id="name" maxlength="30" type="text" placeholder="User name"
-				required value=""> <input id="email" type="email"
-				placeholder="E-mail" required value=""> <input id="pass"
-				maxlength="30" type="password" placeholder="Password" required
-				value=""> <input id="repass" maxlength="30" type="password"
-				placeholder="Re Password" required value=""> <input
-				type="submit" value="Register" onclick=""> <a
-				href="../begin/login.jsp">Click here to Login</a>
+		<div class="header">Please Sign In</div>
+		<form id="login-form" method="POST" action="login">
+
+			<input id="email" maxlength="30" type="email" placeholder="E-mail"
+				required value=""> <input id="pass" maxlength="50"
+				type="password" placeholder="Password" required value=""> <input
+				id="checkbox" type="checkbox" class="check" name="remember">
+			<label>Remember me</label> <input id="login" type="submit" onclick=""
+				value="Login"> <a href="/Web/begin/register.jsp">Click
+				here to Register</a>
+
 		</form>
 		<%
 		String err = (String) request.getAttribute("error");
