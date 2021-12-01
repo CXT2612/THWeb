@@ -3,6 +3,7 @@
 <%@ page import="member.dao.*"%>
 <%@ page import="member.bean.*"%>
 <%@ page import="member.controller.RegisterServlet"%>
+
 <!DOCTYPE html>
 <html>
 <head>
