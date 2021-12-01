@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
  * @email Ramesh Fadatare
  */
 
-@WebServlet(urlPatterns = "/Web/begin/register")
+@WebServlet(urlPatterns = {"/register"})
 public class RegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1;
 	public memberDAO registerDao;

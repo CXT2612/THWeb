@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
  * @email Ramesh Fadatare
  */
 
-@WebServlet(urlPatterns = "/Web/body/profile")
+@WebServlet(urlPatterns = {"/profile"})
 public class ProfileServlet extends HttpServlet {
 	private static final long serialVersionUID = 1;
 	public memberDAO profileDao;
