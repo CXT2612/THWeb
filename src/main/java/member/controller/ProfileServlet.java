@@ -1,4 +1,5 @@
 package member.controller;
+
 import member.bean.*;
 import member.dao.*;
 
@@ -16,13 +17,15 @@ import javax.servlet.http.HttpSession;
  * @email Ramesh Fadatare
  */
 
-@WebServlet(urlPatterns = {"/profile"})
+@WebServlet(urlPatterns = { "/profile" })
 public class ProfileServlet extends HttpServlet {
 	private static final long serialVersionUID = 1;
 	public memberDAO profileDao;
+
 	public void init() {
 		profileDao = new memberDAO();
 	}
+
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -40,12 +43,15 @@ public class ProfileServlet extends HttpServlet {
 			profileBean.setDes(des);
 			try {
 				if (profileDao.editUser(profileBean) == 1) {
-					memberBean u = profileDao.getUser();
-					if (u != null) {
-						session.setAttribute("user", u);
-						session.setAttribute("email", u.getEmail());
-						request.setAttribute("update", "Update profile successfully");
-					}
+					memberBean u = profileDao.getUser();	
+					session.setAttribute("fname", u.getFname());
+					session.setAttribute("lname", u.getLname());
+					session.setAttribute("phone", u.getPhone());
+					session.setAttribute("des", u.getDes());
+					session.setAttribute("email", u.getEmail());
+					request.setAttribute("update", "Update profile successfully");
+					RequestDispatcher rd = request.getRequestDispatcher("editprogile.jsp");
+					rd.forward(request, response);
 				} else {
 					request.setAttribute("error", "Update profile failed");
 					RequestDispatcher rd = request.getRequestDispatcher("editprogile.jsp");
@@ -66,6 +72,8 @@ public class ProfileServlet extends HttpServlet {
 				request.setAttribute("error", "Phone must be between 9 and 13 characters.");
 		}
 	}
+
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		this.doGet(request, response);

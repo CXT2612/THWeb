@@ -4,6 +4,11 @@
   <artifactId>Web</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
+  <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+  </properties>
   <dependencies>
     <!-- Apache-tiles -->
     <dependency>
@@ -11,6 +16,11 @@
       <artifactId>tiles-extras</artifactId>
       <version>3.0.8</version>
     </dependency>
+    <dependency>
+      <groupId>org.apache.tiles</groupId>
+      <artifactId>tiles-jsp</artifactId>
+      <version>3.0.8</version>
+	</dependency>
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
@@ -26,6 +36,11 @@
       <artifactId>taglibs-standard-spec</artifactId>
       <version>1.2.5</version>
     </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
+	</dependency>
     <dependency>
       <groupId>jstl</groupId>
       <artifactId>jstl</artifactId>

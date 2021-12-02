@@ -132,28 +132,47 @@ h5 {
 		</aside>
 		<section>
 			<h1>Edit Profile</h1>
+			<%			
+			String fname = (String) session.getAttribute("fname");
+			String lname = (String) session.getAttribute("lname");
+			String phone = (String) session.getAttribute("phone");
+			String des = (String) session.getAttribute("des");
+			String err = (String) request.getAttribute("error");
+			String upt = (String) request.getAttribute("update");
+			String a = err;
+			if (err == null) 
+			{
+				a = upt;
+			}
+			%>
+			<div>
+				<p style="color: red;">
+					<span style="margin-left: 21px;"> <%out.print(err);%></span>
+				</p>
+			</div>
 			<div class="center">
 				<div class="bheader">Profile Form Elements</div>
 				<form id="profile-form" method="post"
 					action="<%=request.getContextPath()%>/profile">
-					<jsp:useBean id="userinfo" class="member.bean.memberBean" scope= "application" >
+					
+						scope="application">
 						<label>First Name</label>
 						<br />
 						<input id="fname" type="text" placeholder="Enter the first name"
-							value='<jsp:getProperty property="fname" name="userinfo"/>'
+							value="<%=fname%>"
 							required>
 						<br />
 						<label>Last Name</label>
 						<br />
 						<input id="lname" type="text" placeholder="Enter the last name"
-							value='<jsp:getProperty property="lname" name="userinfo"/>'
+							value="<%=lname%>"
 							required>
 						<br />
 						<label>Email</label>
 						<br />
 						<h5>
 							<%
-							String e = (String) request.getAttribute("email");
+							String e = (String) session.getAttribute("email");
 							out.print(e);
 							%>
 						</h5>
@@ -164,13 +183,12 @@ h5 {
 						<br />
 						<label>Descriptions</label>
 						<br />
-						<textarea id="des"><jsp:getProperty property="des"
-							name="userinfo" /></textarea>
+						<textarea id="des"><%=des%></textarea>
 						<br />
 						<input id="submit" type="submit" value="Submit Button" onclick="">
 						<input id="reset" type="submit" value="Reset Button"
 							onclick="reset()">
-					</jsp:useBean>
+					
 				</form>
 			</div>
 		</section>

@@ -38,7 +38,6 @@ aside
 	<section>
 		<tiles:insertAttribute name="body" />
 	</section>
-	
 </div>
 </body>
 </html>

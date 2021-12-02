@@ -41,14 +41,14 @@ public class RegisterServlet extends HttpServlet {
 					// TODO Auto-generated catch block
 					System.out.println("Error: " + e.toString());
 				}
-				HttpSession session = request.getSession();
-				session.setAttribute("email", email);
-				session.setAttribute("password", password);
-				response.sendRedirect("login.jsp");
+				//HttpSession session = request.getSession();
+				//session.setAttribute("email", email);
+				//session.setAttribute("password", password);
+				//response.sendRedirect("login.jsp");
 				RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
 				rd.forward(request, response);
 			} else {
-				request.setAttribute("error", "Password and RePassword must same.");
+				request.setAttribute("error", "Password and RePassword must be same.");
 			}
 			break;
 		case 0:
@@ -60,6 +60,7 @@ public class RegisterServlet extends HttpServlet {
 				request.setAttribute("error", "Username must be between 3 and 30 characters.");
 		}
 	}
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		this.doGet(request, response);
