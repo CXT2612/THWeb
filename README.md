@@ -1,5 +1,5 @@
 # Web project
-*Đồ án:
+*Đồ án: Sử dụng IntelliJ IDEA 2021.3
 - View content thêm cột tên Option [edit/delete]
 - View content list chỉ xuất hiện content của mình
 - Size là số lượng kí tự.
